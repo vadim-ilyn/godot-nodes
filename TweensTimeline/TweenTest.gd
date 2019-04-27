@@ -1,6 +1,6 @@
 extends Node2D
 
-var timeline = load("res://Timeline.tscn")
+var timeline = load("res://TweensTimeline/Timeline.tscn")
 
 func _ready():
 	var tl = timeline.instance()

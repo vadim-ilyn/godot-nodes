@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TestTween"
-run/main_scene="res://TweenTest.tscn"
+run/main_scene="res://TweensTimeline/TweenTest.tscn"
 config/icon="res://icon.png"
 
 [rendering]
