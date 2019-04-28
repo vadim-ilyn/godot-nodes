@@ -22,9 +22,9 @@ func _ready():
 			self, 
 			delay, 
 			"call", 
-			delay)
+			[delay, i])
 	
 	tw.start()
 	
-func call(delay):
-	prints(sprite.get_position())
+func call(args):
+	prints(args[0], args[1], sprite.get_position())
