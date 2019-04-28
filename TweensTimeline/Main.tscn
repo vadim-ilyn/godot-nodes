@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://TweensTimeline/TweenTest.gd" type="Script" id=1]
+[ext_resource path="res://TweensTimeline/Main.gd" type="Script" id=1]
 [ext_resource path="res://TweensTimeline/icon.png" type="Texture" id=2]
 
 [node name="TweenTest" type="Node2D"]
