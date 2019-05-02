@@ -9,6 +9,7 @@ func _ready():
 	tl.set_tween(Vector2(0, 0), Vector2(200, 200), 2.0)
 	tl.set_tween(Vector2(200, 200), Vector2(500, 200), 2.0)
 	tl.set_tween(Vector2(500, 200), Vector2(500, 500), 2.0)
+	tl.set_repeat(true)
 	tl.start()
 	tl.connect("finish", self, "_on_animation_finish")
 

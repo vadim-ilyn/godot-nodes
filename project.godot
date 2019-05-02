@@ -8,14 +8,19 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Object",
+"class": "MyClass",
+"language": "GDScript",
+"path": "res://Class/MyClass.gd"
+} ]
 _global_script_class_icons={
-
+"MyClass": "res://Class/icon.png"
 }
 
 [application]
 
-config/name="TestTween"
+config/name="GodotLessons"
 run/main_scene="res://TweensTimeline/Main.tscn"
 config/icon="res://icon.png"
 

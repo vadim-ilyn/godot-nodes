@@ -6,6 +6,7 @@ var tw
 var setter
 var tweens = []
 var current_tween_index = 0
+var repeat = false
 
 func _ready():
 	tw = Tween.new()
@@ -43,6 +44,9 @@ func set_tween(init_value, finish_value, duration, transition = Tween.TRANS_LINE
 		transition = transition,
 		easing = easing
 	})
+	
+func set_repeat(enabled):
+	repeat = enabled
 
 func _set_value(value):
 	assert(setter)
@@ -56,6 +60,10 @@ func _on_step(o, node_path_key, elapsed_t, value):
 func _on_tween_finish(o, node_key_path):
 	current_tween_index += 1
 	if current_tween_index == tweens.size():
-		emit_signal("finish")
+		if repeat :
+			current_tween_index = 0
+			start()
+		else :
+			emit_signal("finish")
 	else :
 		start()
