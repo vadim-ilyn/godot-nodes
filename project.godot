@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "Dir",
+"language": "GDScript",
+"path": "res://Dir/Dir.gd"
+}, {
 "base": "Object",
 "class": "MyClass",
 "language": "GDScript",
 "path": "res://Class/MyClass.gd"
 } ]
 _global_script_class_icons={
+"Dir": "",
 "MyClass": "res://Class/icon.png"
 }
 
@@ -23,6 +29,10 @@ _global_script_class_icons={
 config/name="GodotLessons"
 run/main_scene="res://TweensTimeline/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [rendering]
 

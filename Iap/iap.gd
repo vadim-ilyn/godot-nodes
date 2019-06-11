@@ -7,14 +7,13 @@ extends Node
 
 # кнопка в настройках для restore purchases, нет автомотического восстановления покупок, только после нажатия на кнопку
 
-# TODO : протестировать
-# https://docs.godotengine.org/en/stable/tutorials/platform/android_in_app_purchases.html
-
+# test play store purchase/requestPurchased:
 # iap.restore_purchases()
 # iap.purchase("android.test.purchased")
 
 var iapAndroid = load("res://Scripts/iap/iapAndroid.gd")
 var iapIOS = load("res://Scripts/iap/iapIOS.gd")
+var iapTest = load("res://Scripts/iap/iapTest.gd")
 
 var payment
 
@@ -28,6 +27,11 @@ func _ready():
 		add_child(events_handle_timer)
 		events_handle_timer.start(1)
 		events_handle_timer.connect("timeout", payment, "on_events_timer_update")
+	elif has_node("/root/TestPayment") :
+		payment = iapTest.new(get_node("/root/TestPayment"))
+
+func is_payment():
+	return payment != null
 
 func bind(show_waiting_animation_impl, on_purchase_success, on_purchase_failed, on_restore_purchase_success, on_restore_purchase_failed, on_product_detail):
 	payment.bind(show_waiting_animation_impl, on_purchase_success, on_purchase_failed, on_restore_purchase_success, on_restore_purchase_failed, on_product_detail)
